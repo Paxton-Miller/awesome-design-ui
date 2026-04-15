@@ -1,0 +1,36 @@
+.grid {
+  display: grid;
+  
+  /* 基础间距与分离间距处理 */
+  gap: var(--local-grid-gap, 0);
+  row-gap: var(--local-grid-row-gap, var(--local-grid-gap));
+  column-gap: var(--local-grid-column-gap, var(--local-grid-gap));
+  
+  /* 行/列/流向控制 */
+  grid-template-rows: var(--local-grid-rows, auto);
+  grid-auto-flow: var(--local-auto-flow);
+  
+  /* ElementUI 级别的对齐控制 */
+  align-items: var(--local-align-items);
+  justify-items: var(--local-justify-items);
+  align-content: var(--local-align-content, normal);
+  justify-content: var(--local-justify-content, normal);
+}
+
+/* 预设列轨道 (Columns) */
+.cols-1 { grid-template-columns: 1fr; }
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* 完美复现 MD 规范：40% vs 60% 不对称布局 */
+.cols-asymmetric {
+  grid-template-columns: var(--ad-layout-grid-asymmetricTemplate);
+}
+
+/* 响应式折叠逻辑 (Mobile: < 809px) */
+@media (max-width: 808px) {
+  .cols-2, .cols-3, .cols-4, .cols-asymmetric {
+    grid-template-columns: 1fr; /* 移动端全部下折为单列瀑布流 */
+  }
+}

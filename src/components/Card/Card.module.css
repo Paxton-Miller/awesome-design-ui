@@ -1,0 +1,58 @@
+.card {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden; /* 保证内部元素不会溢出圆角 */
+    
+    /* 基础颜色：大部分卡片使用 surface (090909) */
+    background-color: var(--ad-colors-background-surface);
+    
+    /* 消费局部变量或回退到 Token 默认值 */
+    padding: var(--local-card-padding, var(--ad-spacing-semantic-cardPadding));
+    border-radius: var(--local-card-radius, var(--ad-radii-card));
+    
+    /* 交互过渡 */
+    transition: var(--ad-animations-transition-base);
+    border: 1px solid var(--ad-colors-border-subtle);
+  }
+  
+  /* ========================
+     Elevation 层级变体
+     ======================== */
+  
+  /* Level 0: 贴地，融入背景 */
+  .variant-flat {
+    background-color: var(--ad-colors-background-base);
+    box-shadow: var(--ad-shadows-elevation-level0);
+  }
+  
+  /* Level 1: 招牌 Framer Blue 发光环 */
+  .variant-surface {
+    box-shadow: var(--ad-shadows-elevation-level1);
+  }
+  
+  /* Level 2: 极度克制的暗色收缩环 */
+  .variant-contained {
+    box-shadow: var(--ad-shadows-elevation-level2);
+  }
+  
+  /* Level 3: 真正的物理悬浮 (带顶部 0.5px 高光) */
+  .variant-elevated {
+    box-shadow: var(--ad-shadows-elevation-level3);
+  }
+  
+  /* ========================
+     悬浮态交互逻辑 (Hoverable)
+     ======================== */
+  .is-hoverable {
+    cursor: pointer;
+  }
+  
+  /* 完美复现 MD 要求: Hover 时蓝环光晕增强 */
+  .is-hoverable.variant-surface:hover {
+    box-shadow: var(--ad-shadows-semantic-cardRingHover);
+  }
+  
+  /* 悬浮卡片在 Hover 时产生轻微物理上浮 */
+  .is-hoverable.variant-elevated:hover {
+    transform: translateY(-4px);
+  }

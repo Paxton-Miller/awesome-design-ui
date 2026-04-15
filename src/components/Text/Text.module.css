@@ -1,0 +1,32 @@
+.text {
+    /* 清除浏览器默认样式，保证多态标签 (h1, p) 表现一致 */
+    margin: 0;
+    padding: 0;
+    
+    /* 基础渲染优化：让字体在深色背景下更锐利 (Framer 的灵魂) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* 消费 React 传过来的局部复合变量 */
+    font-family: var(--local-font-family);
+    font-size: var(--local-font-size);
+    font-weight: var(--local-font-weight);
+    line-height: var(--local-line-height);
+    letter-spacing: var(--local-letter-spacing);
+    font-feature-settings: var(--local-font-feature);
+    text-transform: var(--local-text-transform);
+  }
+  
+  /* --- 颜色映射 --- */
+  .color-primary { color: var(--ad-colors-text-primary); }
+  .color-secondary { color: var(--ad-colors-text-secondary); }
+  .color-placeholder { color: var(--ad-colors-text-placeholder); }
+  .color-inverse { color: var(--ad-colors-text-inverse); }
+  .color-muted { color: var(--ad-colors-text-muted); }
+  
+  /* --- 截断处理 --- */
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }

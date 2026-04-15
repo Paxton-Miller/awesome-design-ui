@@ -1,0 +1,23 @@
+/* src/components/Container/Container.module.css */
+.container {
+  width: 100%;
+  /* 严格消费 1200px 变量 */
+  max-width: var(--ad-layout-container-maxWidth);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  /* 移动端安全边距：复用卡片内边距，保持呼吸感统一 */
+  padding-left: var(--ad-spacing-semantic-cardPadding);
+  padding-right: var(--ad-spacing-semantic-cardPadding);
+}
+
+/* 提供流式布局的逃生舱 */
+.is-fluid {
+  max-width: 100%;
+}
+
+/* 完美复现 MD 规范中的 Breathe through darkness */
+.spacing-section {
+  padding-top: var(--ad-spacing-semantic-section);
+  padding-bottom: var(--ad-spacing-semantic-section);
+}

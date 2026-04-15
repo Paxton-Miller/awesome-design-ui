@@ -1,0 +1,95 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+  border-radius: var(--ad-radii-standard);
+
+  /* 基础文本：使用 Nav/UI 样式规范 */
+  font-family: var(--ad-typography-styles-navUI-fontFamily);
+  font-size: var(--ad-typography-styles-navUI-fontSize);
+  font-weight: var(--ad-typography-styles-navUI-fontWeight);
+  letter-spacing: var(--ad-typography-styles-navUI-letterSpacing);
+  
+  /* 交互动画：0.85 缩放 */
+  transition: var(--ad-animations-transition-base);
+}
+
+.button:active:not(:disabled) {
+  transform: var(--ad-animations-transform-activeScale);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- 圆角逻辑分类 --- */
+.is-pill {
+  border-radius: var(--ad-radii-pill); /* 40px */
+}
+
+/* --- 尺寸控制 --- */
+.size-small {
+  /* 使用 spacing scale 变量 */
+  padding: var(--ad-spacing-scale-4) var(--ad-spacing-scale-8);
+  font-size: var(--ad-typography-styles-label-fontSize);
+}
+
+.size-medium {
+  /* 对应 MD 要求：10px 15px */
+  padding: var(--ad-spacing-semantic-buttonPadding);
+}
+
+.size-large {
+  padding: var(--ad-spacing-scale-12) var(--ad-spacing-scale-20);
+  font-size: var(--ad-typography-styles-bodyLarge-fontSize);
+}
+
+/* --- 变体 1: Solid White Pill --- */
+.variant-solid {
+  background-color: var(--ad-colors-background-inverse); /* #ffffff */
+  color: var(--ad-colors-text-inverse); /* #000000 */
+}
+
+/* --- 变体 2: Frosted Pill --- */
+.variant-frosted {
+  background-color: var(--ad-colors-background-surfaceGlass);
+  color: var(--ad-colors-text-primary); /* 跟随主文本色 */
+  border: 1px solid var(--ad-colors-border-subtle); 
+}
+
+.variant-frosted:hover {
+  background-color: var(--ad-colors-background-surfaceGlassHover); /* rgba(255,255,255,0.15) */
+}
+
+/* --- 变体 3: Ghost --- */
+.variant-ghost {
+  background-color: transparent;
+  color: var(--ad-colors-text-primary); /* 白色文本 */
+}
+
+.variant-ghost:hover {
+  background-color: var(--ad-colors-action-ghostHover); /* rgba(255,255,255,0.1) */
+}
+
+/* 加载动画基础 */
+.loader {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
