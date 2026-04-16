@@ -42,23 +42,37 @@ export const useTheme = () => {
 export interface ThemeProviderProps {
   theme: ThemeConfig;
   children: React.ReactNode;
+  className?: string; 
+  style?: React.CSSProperties;
 }
 
-export const ThemeProvider = ({ theme, children }: ThemeProviderProps) => {
+export const ThemeProvider = ({ theme, children, className = '', style }: ThemeProviderProps) => {
   // 缓存计算结果，避免不必要的 re-render
   const cssVariables = useMemo(() => {
     const { name, ...tokens } = theme;
     return objectToCssVariables(tokens);
   }, [theme]);
 
+  const globalCssString = useMemo(() => {
+    return Object.entries(cssVariables)
+      .map(([key, value]) => `${key}: ${value};`)
+      .join('\n');
+  }, [cssVariables]);
+
   return (
     <ThemeContext.Provider value={{ theme }}>
+      
+      {/* 将所有的 --ad-xxx 变量强行注入到全局的 :root 伪类中。
+        从此以后，html、body、甚至外挂到 body 上的 React Portal 弹窗，
+        全部都能无死角地读取到你的主题变量！
+      */}
+      <style dangerouslySetInnerHTML={{ __html: `:root {\n${globalCssString}\n}` }} />
       {/* 这里将所有的 --ad-xxx 变量挂载到 style 上。
         内部的 Button、Text 组件将直接消费这些变量！
       */}
       <div 
-        className={`ad-theme-${theme.name}`} 
-        style={cssVariables}
+        className={`ad-theme-${theme.name} ${className}`} 
+        style={style}
       >
         {children}
       </div>

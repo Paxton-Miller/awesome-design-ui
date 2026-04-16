@@ -9,6 +9,7 @@ import { ThemeProvider } from "../provider/ThemeProvider";
 import { framerTheme } from "../theme/framer";
 import { appleTheme } from "../theme/apple";
 import { airtableTheme } from "../theme/airtable";
+import { CssBaseline } from "../components/CssBaseline/CssBaseline";
 const meta: Meta = {
   title: "Pages/LandingPage", // 放在一个新的分类下
   parameters: {
@@ -21,7 +22,8 @@ export default meta;
 export const Demo = () => {
   return (
     // 1. 注入主题引擎
-    <ThemeProvider theme={framerTheme}>
+    <ThemeProvider theme={airtableTheme}>
+      <CssBaseline />
       {/* 2. Hero 首屏区域 */}
       <Container as="header" sectionPadding style={{ marginBottom: '8rem' }}>
         {/* 单列居中排版 */}
