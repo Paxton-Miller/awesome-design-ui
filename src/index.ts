@@ -12,4 +12,6 @@ export * from './provider/ThemeProvider';
 export * from './theme/framer';
 export * from './theme/apple';
 export * from './theme/airtable';
+export * from './theme/binance';
+export * from './theme/claude';
 export * from './theme/types';

@@ -3,9 +3,11 @@ import styles from './Button.module.css';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /** Button 的三种风格 */
-  variant?: 'solid' | 'frosted' | 'ghost';
+  variant?: 'primary' | 'solid' | 'frosted' | 'ghost';
   /** 尺寸控制 */
   size?: 'small' | 'medium' | 'large';
+  // 增加形状控制
+  shape?: 'standard' | 'pill';
   /** 是否加载中 */
   loading?: boolean;
   /** 是否禁用 */
@@ -14,8 +16,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = ({ 
-  variant = 'solid', 
+  variant = 'primary', 
   size = 'medium',
+  shape = 'standard',
   loading = false,
   disabled = false,
   children, 
@@ -27,6 +30,7 @@ export const Button = ({
     styles.button,
     styles[`variant-${variant}`],
     styles[`size-${size}`],
+    styles[`shape-${shape}`],
     loading ? styles['is-loading'] : '',
     className
   ].filter(Boolean).join(' ');

@@ -1,12 +1,14 @@
 // .storybook/preview.tsx
 import React from 'react';
 import type { Preview } from "@storybook/react";
-import { ThemeProvider, CssBaseline, framerTheme, appleTheme, airtableTheme } from '../src';
+import { ThemeProvider, CssBaseline, framerTheme, appleTheme, airtableTheme, binanceTheme, claudeTheme } from '../src';
 
 const themes = {
   framer: framerTheme,
   apple: appleTheme,
   airtable: airtableTheme,
+  binance: binanceTheme,
+  claude: claudeTheme,
 };
 
 const preview: Preview = {
@@ -22,6 +24,8 @@ const preview: Preview = {
           { value: 'framer', title: 'Framer (Dark)' },
           { value: 'apple', title: 'Apple (Light)' },
           { value: 'airtable', title: 'Airtable (Enterprise)' },
+          { value: 'binance', title: 'Binance' },
+          { value: 'claude', title: 'Claude' },
         ],
         dynamicTitle: true,
       },

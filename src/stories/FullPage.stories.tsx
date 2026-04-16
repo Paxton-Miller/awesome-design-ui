@@ -9,7 +9,9 @@ import { ThemeProvider } from "../provider/ThemeProvider";
 import { framerTheme } from "../theme/framer";
 import { appleTheme } from "../theme/apple";
 import { airtableTheme } from "../theme/airtable";
+import { binanceTheme } from "../theme/binance";
 import { CssBaseline } from "../components/CssBaseline/CssBaseline";
+import { claudeTheme } from "../theme/claude";
 const meta: Meta = {
   title: "Pages/LandingPage", // 放在一个新的分类下
   parameters: {
@@ -22,7 +24,7 @@ export default meta;
 export const Demo = () => {
   return (
     // 1. 注入主题引擎
-    <ThemeProvider theme={airtableTheme}>
+    <ThemeProvider theme={claudeTheme}>
       <CssBaseline />
       {/* 2. Hero 首屏区域 */}
       <Container as="header" sectionPadding style={{ marginBottom: '8rem' }}>
@@ -47,7 +49,7 @@ export const Demo = () => {
           </Text>
 
           <Grid columns={2} gap={15} style={{ marginTop: "20px" }}>
-            <Button variant="solid" size="large">
+            <Button variant="primary" size="large">
               Start for free
             </Button>
             <Button variant="frosted" size="large">

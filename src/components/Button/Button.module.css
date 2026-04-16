@@ -11,9 +11,9 @@
   border-radius: var(--ad-radii-standard);
 
   /* 基础文本：使用 Nav/UI 样式规范 */
-  font-family: var(--ad-typography-styles-navUI-fontFamily);
-  font-size: var(--ad-typography-styles-navUI-fontSize);
-  font-weight: var(--ad-typography-styles-navUI-fontWeight);
+  font-family: var(--ad-typography-styles-body-fontFamily);
+  font-size: var(--ad-typography-styles-body-fontSize);
+  font-weight: 500;
   letter-spacing: var(--ad-typography-styles-navUI-letterSpacing);
   
   /* 交互动画：0.85 缩放 */
@@ -43,7 +43,8 @@
 
 .size-medium {
   /* 对应 MD 要求：10px 15px */
-  padding: var(--ad-spacing-semantic-buttonPadding);
+  padding: var(--ad-spacing-scale-3) var(--ad-spacing-scale-5); 
+  font-size: var(--ad-typography-styles-body-fontSize);
 }
 
 .size-large {
@@ -52,10 +53,20 @@
 }
 
 /* --- 变体 1: Solid White Pill --- */
+.variant-primary {
+  background-color: var(--ad-colors-action-primary);
+  color: var(--ad-colors-text-inverse); /* 确保文字对比度 */
+  border: none;
+}
+
 .variant-solid {
   background-color: var(--ad-colors-background-inverse); /* #ffffff */
   color: var(--ad-colors-text-inverse); /* #000000 */
 }
+
+/* 圆角由外部控制 */
+.shape-standard { border-radius: var(--ad-radii-standard); }
+.shape-pill { border-radius: var(--ad-radii-pill); }
 
 /* --- 变体 2: Frosted Pill --- */
 .variant-frosted {

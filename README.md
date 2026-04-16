@@ -135,6 +135,8 @@ function ThemeSwitcherApp() {
 - [Framer](https://getdesign.md/framer/design-md)
 - [Apple](https://getdesign.md/apple/design-md)
 - [Airtable](https://getdesign.md/airtable/design-md)
+- [Binance](https://getdesign.md/binance/design-md)
+- [Claude](https://getdesign.md/claude/design-md)
 
 ---
 
