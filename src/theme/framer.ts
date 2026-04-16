@@ -3,7 +3,7 @@ import { ThemeConfig } from "./types";
 
 // 提取公用字体族，方便复用
 const families = {
-  display: '"GT Walsheim Framer Medium", "GT Walsheim Medium", sans-serif',
+  display: '"GT Walsheim Framer Medium", "GT Walsheim Medium", "Inter", -apple-system, BlinkMacSystemFont, sans-serif',
   body: '"Inter Variable", Inter, -apple-system, system-ui, sans-serif',
   bodyReadable: '"Inter Framer Regular", Inter, sans-serif',
   accent: '"Mona Sans", sans-serif',
