@@ -216,20 +216,20 @@ export const claudeTheme: ThemeConfig = {
   spacing: {
     base: "8px",
     scale: {
-      1: "4px",
-      2: "8px",
-      3: "12px",
-      4: "16px",
-      5: "20px",
-      6: "24px",
-      8: "32px",
-      10: "48px",
-      12: "64px",
-      15: "80px",
-      20: "120px",
-      30: "160px",
-      35: "200px",
-    },
+        1: "1px",   // space-1
+        2: "2px",   // space-2
+        3: "4px",  // space-3
+        4: "4px",  // space-4
+        5: "8px",  // space-5
+        6: "16px",  // space-6
+        8: "20px",  // space-7
+        10: "24px", // space-8
+        12: "32px", // space-9
+        15: "48px", // space-10
+        20: "64px", // Extended spacing
+        30: "80px", // Extended spacing
+        35: "120px", // Extended spacing
+      },
     semantic: {
       section: "120px", // Generous magazine-like top/bottom margins
       cardPadding: "32px", // Generous internal padding for breathing room

@@ -223,19 +223,19 @@ export const binanceTheme: ThemeConfig = {
   spacing: {
     base: "8px", // Base unit
     scale: {
-      1: "4px",   // space-1
-      2: "8px",   // space-2
-      3: "12px",  // space-3
-      4: "16px",  // space-4
-      5: "20px",  // space-5
-      6: "24px",  // space-6
-      8: "32px",  // space-7
-      10: "48px", // space-8
-      12: "64px", // space-9
-      15: "80px", // space-10
-      20: "120px", // Extended spacing
-      30: "160px", // Extended spacing
-      35: "200px", // Extended spacing
+      1: "1px",   // space-1
+      2: "2px",   // space-2
+      3: "4px",  // space-3
+      4: "4px",  // space-4
+      5: "8px",  // space-5
+      6: "16px",  // space-6
+      8: "20px",  // space-7
+      10: "24px", // space-8
+      12: "32px", // space-9
+      15: "48px", // space-10
+      20: "64px", // Extended spacing
+      30: "80px", // Extended spacing
+      35: "120px", // Extended spacing
     },
     semantic: {
       section: "80px", // Large section spacing (space-10) to create "inviting entry"

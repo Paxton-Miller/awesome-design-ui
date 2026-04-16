@@ -43,7 +43,7 @@
 
 .size-medium {
   /* 对应 MD 要求：10px 15px */
-  padding: var(--ad-spacing-scale-3) var(--ad-spacing-scale-5); 
+  padding: var(--ad-spacing-scale-8) var(--ad-spacing-scale-12); 
   font-size: var(--ad-typography-styles-body-fontSize);
 }
 
