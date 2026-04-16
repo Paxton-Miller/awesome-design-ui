@@ -19,7 +19,7 @@
       "require": "./dist/awesome-design-ui.umd.js",
       "types": "./dist/src/index.d.ts"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/awesome-design-ui.css"
   },
   "scripts": {
     "dev": "vite",
