@@ -6,11 +6,8 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [
     react(),
-    dts({ 
-      // 【关键修改】：开启类型合并打包
-      rollupTypes: true, 
-      insertTypesEntry: true 
-    }), 
+    // 去掉 rollupTypes，让插件原汁原味地输出类型文件
+    dts({ include: ['src'] })
   ],
   build: {
     lib: {
@@ -19,7 +16,8 @@ export default defineConfig({
       fileName: (format) => `awesome-design-ui.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      // 把 jsx-runtime 也加进来，避免打包冗余的 React 代码
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',

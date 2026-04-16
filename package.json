@@ -12,12 +12,12 @@
   "description": "",
   "main": "./dist/awesome-design-ui.umd.js",
   "module": "./dist/awesome-design-ui.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/awesome-design-ui.es.js",
       "require": "./dist/awesome-design-ui.umd.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/src/index.d.ts"
     },
     "./style.css": "./dist/style.css"
   },
