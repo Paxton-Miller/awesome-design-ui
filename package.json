@@ -1,13 +1,29 @@
 {
   "name": "awesome-design-ui",
   "version": "1.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "description": "",
-  "main": "index.js",
+  "main": "./dist/awesome-design-ui.umd.js",
+  "module": "./dist/awesome-design-ui.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/awesome-design-ui.es.js",
+      "require": "./dist/awesome-design-ui.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -26,6 +42,7 @@
     "@storybook/react-vite": "^10.3.5",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
     "@vitest/browser-playwright": "^4.1.4",
     "@vitest/coverage-v8": "^4.1.4",
     "playwright": "^1.59.1",
